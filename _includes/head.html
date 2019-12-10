@@ -1,31 +1,191 @@
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  <!-- CSS -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-
-
-
-  <!-- Favicon -->
-<!-- 
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon-32x32.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon-16x16.png" | relative_url }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/apple-touch-icon.png" | relative_url }}">
- -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
   
+<!--  OVERRIDE FONTS  -->
+
+
+<!-- <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Serif+Pro" rel="stylesheet">  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet"> -->
+
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Work+Sans:400,600,700" rel="stylesheet">
+
+<style type="text/css">
+
+body {
+	// font-family: 'Source Serif Pro', serif;
+	font-family: 'Work Sans', sans-serif;
+	tab-size: 2;
+}
+
+h1, h2 { 
+	font-weight: 600; 
+	}
+	
+	
+.post-content h3, h3 {
+	font-weight: 600; 
+	font-size: 1.2em;
+	/* text-transform: uppercase; */
+	}	
+
+pre, code {
+	font-family: 'Source Code Pro', monospace;
+/* 	background-color: #ffe; */
+
+/* Try using alpha transparency instead so it can layr on top of other things */
+	background-color: rgba(255, 255, 0, 0.03);
+}
+
+pre code {
+/* 	Override background colour when inside pre block so transparency is not cumulative */
+	background-color: rgba(255, 255, 255, 0);
+}
+
+p code {
+	/* background-color: #fffffc; */	
+	/* Try using alpha transparency instead so it can layr on top of other things */
+	background-color: rgba(255, 255, 0, 0.03);
+
+	
+	/* border: 1px solid #eec; */
+	/* border: 1px solid #eeeecc; */
+	border: rgba(90, 90, 0, 0.05) 1px solid;
+	/* 
+border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+ */
+	border-top: rgba(255, 255, 255, 0.3) 1px solid;
+	border-left: rgba(255, 255, 255, 0.3) 1px solid;
+}
+
+.highlighter-rouge pre.highlight,
+figure.highlight pre
+ {
+	background-color: #ffe;
+	border: 1px solid #eec;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+blockquote {
+	letter-spacing: 0px;
+	border-left: 0px none;
+	font-style: normal;
+	font-size: 1em;
+	background-color: #fff6f9;
+	padding: 15px;
+	color: #998088;
+	}
+
+hr {
+	margin: 40px 0px;
+	}
+	
+	
+span.wip {
+	background-color: rgba(0, 255, 0, 0.3);
+	border: rgba(0, 90, 0, 0.3) 1px solid;
+	border-top: rgba(255, 255, 255, 0.3) 1px solid;
+	border-left: rgba(255, 255, 255, 0.3) 1px solid;
+	padding: 0px 4px;
+	border-radius: 2px;
+	
+}	
+
+footer {
+  /* 
+background: #ff0;
+  color: #660;
+ */
+  }
   
+.footer-col-wrapper {  
+   /*  color: #990; */
+    }
+  
+header.site-header {
+  border-top: 0px none;
+  padding-bottom: 20px;
+/*   text-transform: uppercase; */
+ /*  background: #ff0; */
+  }
+  
+header.site-header div.wrapper h1 a {
+  color: #999;
+  font-weight: 600; 
+  }
 
-<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-<link rel="manifest" href="/assets/favicon/site.webmanifest">
-<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#000000">
-<link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
 
+table.invisibleTable {
+  color: #111;
+  margin-bottom: 0px;
+  width: 100%;
+
+ 
+  border-collapse: collapse;
+  border: 0px none; 
+  }
+  
+table.invisibleTable tr:nth-child(even) {
+
+  background-color: #fdfdfd;
+    }
+
+table.invisibleTable th, table td {
+    padding: 4px 4px 4px 4px;
+    }
+table.invisibleTable th {
+border: 0px none; 
+    /* border-bottom: 1px solid #000; */
+    background-color: #fdfdfd;
+    }
+table.invisibleTable td {
+    border: 0px none;
+    vertical-align: top;
+    }
+
+
+table#icons td, table#icons th {
+  text-align: center;
+  }
+  
+table#icons img {
+   height:60px;
+   margin-bottom: 16px;
+  }
+    
+    
+div.highlight {
+  padding: 16px;
+  border-radius:4px;
+  margin: 32px 0px;
+  background-color: #eee;
+  }
+ 
+ 
+ 
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+</style>
+
+  
 </head>
