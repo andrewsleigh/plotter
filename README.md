@@ -85,6 +85,13 @@ Then I use [CNCJS](https://cnc.js.org) to send commands to the plotter. They eve
 
 
 
-### Mechanical parts
+### Mechanical parts and materials
 
-I'm using [62oz Nema 17 stepper motors](https://ooznest.co.uk/product/nema17-stepper-motors/) from Ooznest (UK) and a standard SG90 micro servo to lift/drop the pen. 
+I'm using [62oz Nema 17 stepper motors](https://ooznest.co.uk/product/nema17-stepper-motors/) from Ooznest (UK) and a standard SG90 micro servo to lift/drop the pen. The rods are 8 mm and 10 mm steel linear rods, also from Ooznest, the pen lifter rods are cut from kite poles, and the cable supports are cut by hand from polypropylene sheet. 3D parts are all printed in PLA.
+
+
+### Improvements
+
+I've got some ideas about improving on his design, mostly to increase rigidity. First on the list is to experiment with a v-slot and gantry assembly for the x-axis. Although I'm quite happy with the product design on this version, I'd still like to make it more well-integrated; perhaps find a way to get the motors out of sight.
+
+
