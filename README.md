@@ -1,5 +1,3 @@
-# DIY Pen Plotter
-
 
 ## Introduction
 
