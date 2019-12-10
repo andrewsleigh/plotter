@@ -2,7 +2,7 @@
 <iframe width="800" height="450" src="https://www.youtube.com/embed/Z99n9q5OYKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-
+  
 I've always enjoyed the aesthetics of pen plotters, both in the way they operate, and their output. And unlike most digital machines that interface with the physical world, they actually get better at the transition point. Laser cutters make a smell, they burn or melt edges and leave behind a kerf. 3D printers are slow, and leave behind layer lines or heaps of PLA spaghetti. But pen plotters have a delightful slow, deliberate movement that is both cleanly digital and unavoidably textured.
 
 I have an old HP 7475A plotter, but I wanted to try making my own. Not least because I've just made a 1-axis CNC machine (a camera slider) so wanted to continue learning by adding another axis. In particular, I learned from the previous project that geting a machine to 90% good enough is easy. The real work is in that last 10%. If I want to create really good plots, I need to make a really good plotter.
@@ -30,14 +30,14 @@ However, I've shared my 3D files here for others to use if interested. Most of t
 
 ## Version 2: Cartesian Plotter
 
+![Plotter v2](https://github.com/andrewsleigh/plotter/raw/master/photos/v2/IMG_6515.jpg)
 
 
 
-#More details and files coming soon!#
 
-3D design
+### 3D design
 
-
+More details and files coming soon...
 
 ### Electronics
 
@@ -54,12 +54,23 @@ The Arduino is loaded with Grbl firmware, pretty much stock, but I'm using one o
 
 ### Photos and video
 
+There's a short demo on YouTube: <https://youtu.be/Z99n9q5OYKk>  
+And lots of photos on Github: <https://github.com/andrewsleigh/plotter/tree/master/photos/v2>
+
 
 
 
 ### Workflow
 
-#Coming soon ...#
+Most of my plots are procedurally generated in Processing or p5. I write sketches that are optimised to create continuous lines and curves: no pixel data or, colours or line styles. SO far, I haven't figured out a way to use the 3D renderer in p5, and still be able to export the artwork as an SVG. Either way, I start with vector line art. 
+
+The plotter expects G-Code commands. Typically these are used by CNC machines such as mills, 3D printers and laser cutters. Most of the instructions are shared between machine types except at the business end. The plotter expects pen up and pen down commands to move the pen. (In HPGL, the language used by HP plotters, these are `PU;` and `PD;`.) Here, we can piggy back on G-Code commands intended to control the power of a laser. SO where a laser cutter might start a line by switching the laser on to a certain power, we can use the same command but send it to the servo to move the wiper and drop the pen. This is what the modified Grbl firmware does. 
+
+I use the [J Tech Inkscape Laser Plug-In](https://jtechphotonics.com/?page_id=2012) to generate a G-Code file from the SVG in Inkscape. Currently I can only get this to work in Inkscape 0.9, which is 32 bit, and therefore not compatible with macOS Catalina.
+
+Then I use [CNCJS](https://cnc.js.org) to send commands to the plotter. They even have a half-decent [desktop app](https://github.com/cncjs/cncjs/wiki/Desktop-App). 
+
+
 
 
 ### Mechanical parts
