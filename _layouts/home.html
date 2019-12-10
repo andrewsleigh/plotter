@@ -1,0 +1,24 @@
+---
+layout: default
+regenerate: true
+---
+
+<h1>Current projects</h1>
+ <div class="catalogue-line"></div>
+<ul>
+	<li><a href="/projects/digital-fabrication-methods/">Teaching Digital Fabrication</a> at the University of Brighton</li>
+	<li><a href="https://wildebeestdiaries.wordpress.com">Vanlife</a>: on the road in our van in Europe</li>
+	<li>More <a href="/projects/maker-assembly">Maker Assembly</a> monthly events at STEAMhouse in Birmingham</li>
+	<li>I'm available for <a href="{{ site.baseurl }}freelance">freelance work</a>, mostly remotely, or in Europe</li>
+</ul>
+
+
+<h1>Blog: most recent posts</h1>
+ <div class="catalogue-line"></div>
+<ul>{% for post in site.posts limit:5 %}
+<li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+
+
