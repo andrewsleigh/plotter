@@ -32,7 +32,7 @@ However, I've shared my 3D files here for others to use if interested. Most of t
 
 ![Plotter v2](https://github.com/andrewsleigh/plotter/raw/master/photos/v2/IMG_6515.jpg)
 
-This version build on what I learned with version 1. Most obviously, it uses a traditional 'cartesian' design, where movement in the y-axis is provided by a motorized arm, while the drawing surface stays still. This has the benefit of much greater accuracy. It also means that you can, in theory, draw on any flat surface. 
+This version builds on what I learned with version 1. Most obviously, it uses a traditional 'cartesian' design, where movement in the y-axis is provided by a motorized arm, while the drawing surface stays still. This has the benefit of much greater accuracy. It also means that you can, in theory, draw on any flat surface. 
 
 However the drawbacks are that:
 
@@ -92,6 +92,6 @@ I'm using [62oz Nema 17 stepper motors](https://ooznest.co.uk/product/nema17-ste
 
 ### Improvements
 
-I've got some ideas about improving on his design, mostly to increase rigidity. First on the list is to experiment with a v-slot and gantry assembly for the x-axis. Although I'm quite happy with the product design on this version, I'd still like to make it more well-integrated; perhaps find a way to get the motors out of sight.
+I've got some ideas about improving on this design, mostly to increase rigidity. First on the list is to experiment with a v-slot and gantry assembly for the x-axis. And although I'm quite happy with the product design on this version, I'd still like to make it more well-integrated; perhaps find a way to get the motors out of sight.
 
 
