@@ -1,5 +1,6 @@
-
-## Introduction
+<div class="video-responsive">
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Z99n9q5OYKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 
 I've always enjoyed the aesthetics of pen plotters, both in the way they operate, and their output. And unlike most digital machines that interface with the physical world, they actually get better at the transition point. Laser cutters make a smell, they burn or melt edges and leave behind a kerf. 3D printers are slow, and leave behind layer lines or heaps of PLA spaghetti. But pen plotters have a delightful slow, deliberate movement that is both cleanly digital and unavoidably textured.
@@ -30,9 +31,12 @@ However, I've shared my 3D files here for others to use if interested. Most of t
 ## Version 2: Cartesian Plotter
 
 
+
+
 #More details and files coming soon!#
 
 3D design
+
 
 
 ### Electronics
@@ -47,6 +51,11 @@ You can use pretty much any Trinamic driver board. There is a good comparison he
 The Arduino is loaded with Grbl firmware, pretty much stock, but I'm using one of the many variants that lets you control a servo for pen up and pen down.
 
 <https://github.com/robottini/grbl-servo>
+
+### Photos and video
+
+
+
 
 ### Workflow
 
