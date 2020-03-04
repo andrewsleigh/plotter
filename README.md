@@ -67,12 +67,42 @@ I tried a quick test by hacking a previous project and bolting my existing y-axi
 
 ![Plotter v3 prototype](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/IMG_3819.jpeg)
 
-I already had 2 lengths of 2020 v-slot from my first build, so I initially used these, and made a simple assembly that gained rigidity by bolting these down to a wooden base.
+I already had 2 lengths of 2020 v-slot from my first build, so I initially used these, and made a simple assembly that gained rigidity by bolting these down to a wooden base. 
 
+I ordered a standard v-slot gantry from China, which cost about £10-12, including wheels, bolts and spacers – including eccentric spacers. This allowed me to get a very good fit of the gantry on the x-axis for smooth quiet motion. 
 
-![Plotter v3 2020](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2060-sm.png)
+If you don't want to buy an aluminum ganry, could can easily cut one on a laser (as I did for my prototype) or 3D print one from the OpenBuilds design. 
+
+![Plotter v3 2020](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2020-sm.png)
 
 Note, you'll need to tap M5 holes into the ends of the v-slot to attach the two end brackets. The feet are bolted frmo underneath into the v-slot. 
+
+But then I came into the possession(!) of a 70 cm lngth of 2060 v-slot, so I was able to make a longer, even more stable x-axis. I needed to switch the orientation of the x-axis motor, and raise the axis a little more off the ground to enable th timing belt to go over and under the 2060. I also had to fit a larger 30 tooth pulley. 
+
+But otherwise the principle is the same, I just did a little more work to inteagrate the electronics and motor. 
+
+
+
+### Improvements over earlier versions
+
+* More stable x-axis (and so less drooping of the pen at it's furthest y-extension)
+* X-axis can be screwed down to a solid base for greater stability
+* Improved brackets for timing belt and linear rods on y-axis so belt can be more easily removed or tightened
+* Simplified and more compact pen lifter
+* Housing for Arduino and CNC shield can be removed or re-modelled easily (e.g. to fit a smaller Nano-based CNC shield)
+
+### Other parts you'l need
+
+* 2 NEMA 17 motors
+* 2 GT2 timing belts
+* 30 or 40 tooth pulley for x-axis timing belt
+* 20 tooth pulley for x-axis timing belt
+* Large idley pulley for x-axis timing belt
+* 2 small idler pulleys for y-axis
+* 5 mm rods for pen lifter
+* Plenty of M5 and M3 hardware!
+* Large v-slot gantry kit
+* Servo motor
 
 
 
