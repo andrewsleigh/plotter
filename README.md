@@ -79,7 +79,17 @@ Note, you'll need to tap M5 holes into the ends of the v-slot to attach the two 
 
 But then I came into the possession(!) of a 70 cm lngth of 2060 v-slot, so I was able to make a longer, even more stable x-axis. I needed to switch the orientation of the x-axis motor, and raise the axis a little more off the ground to enable th timing belt to go over and under the 2060. I also had to fit a larger 30 tooth pulley. 
 
-But otherwise the principle is the same, I just did a little more work to inteagrate the electronics and motor. 
+But otherwise the principle is the same, I just did a little more work to integrate the electronics and motor. 
+
+![Plotter v3 2060](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2060-sm.png)
+
+
+### 3D design
+
+<!-- * [3D files on Thingiverse](https://www.thingiverse.com/thing:4037180) -->
+* [3D files on Github](https://github.com/andrewsleigh/plotter/tree/master/3d-parts/v3)
+* [3D assembly on Fusion online](https://a360.co/2Ily4Dw)
+* [Photos on Github]<!-- (https://github.com/andrewsleigh/plotter/tree/master/photos/v2) --> Coming soon
 
 
 
@@ -91,7 +101,7 @@ But otherwise the principle is the same, I just did a little more work to inteag
 * Simplified and more compact pen lifter
 * Housing for Arduino and CNC shield can be removed or re-modelled easily (e.g. to fit a smaller Nano-based CNC shield)
 
-### Other parts you'l need
+### Other parts you'll need
 
 * 2 NEMA 17 motors
 * 2 GT2 timing belts
