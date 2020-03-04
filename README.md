@@ -1,13 +1,14 @@
+<p>
 <div class="video-responsive">
 <iframe width="800" height="450" src="https://www.youtube.com/embed/Z99n9q5OYKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+</p>
 
-
-**Update: 2020-03-04. I'm currently on version 3 of the design, scroll down to see the curent design and download files.**
+**Update: 2020-03-04. I'm currently on version 3 of the design – scroll down to see the current design and download files.**
   
 I've always enjoyed the aesthetics of pen plotters, both in the way they operate, and their output. And unlike most digital machines that interface with the physical world, they actually get better at the transition point. Laser cutters make a smell, they burn or melt edges and leave behind a kerf. 3D printers are slow, and leave behind layer lines or heaps of PLA spaghetti. But pen plotters have a delightful slow, deliberate movement that is both cleanly digital and unavoidably textured.
 
-I have an old HP 7475A plotter, but I wanted to try making my own. Not least because I've just made a 1-axis CNC machine ([a camera slider](../fab-slider)) so wanted to continue learning by adding another axis. In particular, I learned from the previous project that geting a machine to 90% good enough is easy. The real work is in that last 10%. If I want to create really good plots, I need to make a really good plotter.
+I have an old HP 7475A plotter, but I wanted to try making my own. Not least because I've just made a 1-axis CNC machine ([a camera slider](../fab-slider)) so wanted to continue learning by adding another axis. In particular, I learned from the previous project that getting a machine to 90% good enough is easy. The real work is in that last 10%. If I want to create really good plots, I need to make a really good plotter.
 
 
 
@@ -56,15 +57,22 @@ Some other features worth noting:
 
 ## Version 3: Cartesian Plotter with V-slot axis
 
-![Plotter v2](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2060-sm.png)
+Note: I'm currently working on photos for this version - for now, here are some renders.
+
+![Plotter v3 2060](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2060-sm.png)
 
 Previous designs used 10mm steel rods for the x-axis. These are prone to flexing in the assembly, and the linear bearings are also noisy. So I wanted to switch to a design that used a wheeled gantry sliding on v-slot aluminium extrusion. 
 
-I tried a quick test by hacking a previous project and bolting my existing y-axis to a single axis slide I already had. This worked very well and convinced me it wodl be worth building a proper x-axis with v-slot.
+I tried a quick test by hacking a previous project and bolting my existing y-axis to a single axis slide I already had. This worked very well and convinced me it would be worth building a proper x-axis with v-slot.
 
-![Plotter v2](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/IMG_3819.jpeg)
+![Plotter v3 prototype](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/IMG_3819.jpeg)
+
+I already had 2 lengths of 2020 v-slot from my first build, so I initially used these, and made a simple assembly that gained rigidity by bolting these down to a wooden base.
 
 
+![Plotter v3 2020](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2060-sm.png)
+
+Note, you'll need to tap M5 holes into the ends of the v-slot to attach the two end brackets. The feet are bolted frmo underneath into the v-slot. 
 
 
 
@@ -113,6 +121,6 @@ I'm using [62oz Nema 17 stepper motors](https://ooznest.co.uk/product/nema17-ste
 
 ### Improvements
 
-I've got some ideas about improving on this design, mostly to increase rigidity. First on the list is to experiment with a v-slot and gantry assembly for the x-axis. And although I'm quite happy with the product design on this version, I'd still like to make it more well-integrated; perhaps find a way to get the motors out of sight.
+I've got some ideas about improving on this design, mostly to increase rigidity. ~~First on the list is to experiment with a v-slot and gantry assembly for the x-axis.~~ (Fixed n version 3) And although I'm quite happy with the product design on this version, I'd still like to make it more well-integrated; perhaps find a way to get the motors out of sight.
 
 
