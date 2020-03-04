@@ -2,6 +2,8 @@
 <iframe width="800" height="450" src="https://www.youtube.com/embed/Z99n9q5OYKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+
+**Update: 2020-03-04. I'm currently on version 3 of the design, scroll down to see the curent design and download files.**
   
 I've always enjoyed the aesthetics of pen plotters, both in the way they operate, and their output. And unlike most digital machines that interface with the physical world, they actually get better at the transition point. Laser cutters make a smell, they burn or melt edges and leave behind a kerf. 3D printers are slow, and leave behind layer lines or heaps of PLA spaghetti. But pen plotters have a delightful slow, deliberate movement that is both cleanly digital and unavoidably textured.
 
@@ -51,7 +53,22 @@ Some other features worth noting:
 * [3D files on Github](https://github.com/andrewsleigh/plotter/tree/master/3d-parts/v2)
 * [Photos on Github](https://github.com/andrewsleigh/plotter/tree/master/photos/v2)
 
-### Electronics
+
+## Version 3: Cartesian Plotter with V-slot axis
+
+![Plotter v2](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2060-sm.png)
+
+Previous designs used 10mm steel rods for the x-axis. These are prone to flexing in the assembly, and the linear bearings are also noisy. So I wanted to switch to a design that used a wheeled gantry sliding on v-slot aluminium extrusion. 
+
+I tried a quick test by hacking a previous project and bolting my existing y-axis to a single axis slide I already had. This worked very well and convinced me it wodl be worth building a proper x-axis with v-slot.
+
+![Plotter v2](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/IMG_3819.jpeg)
+
+
+
+
+
+## Electronics
 
 I'm using an Arduino Uno with a CNC shield and two stepper drivers. I prototyped with the standard (and cheap) A4988 drivers, but switched over to Trinamic drivers which chop much more smoothly down to 1/256 microsteps, resulting in much quieter motion.
 
@@ -63,6 +80,10 @@ You can use pretty much any Trinamic driver board. There is a good comparison he
 The Arduino is loaded with Grbl firmware, pretty much stock, but I'm using one of the many variants that lets you control a servo for pen up and pen down.
 
 <https://github.com/robottini/grbl-servo>
+
+### CAM
+
+There are nmerous GRBL interfaces availabl, and I've always had good results with [CNCJS](https://cnc.js.org), which is bundled up as a webview inside a Mac app. However, that can hog the machine CPU, and also means your laptop is tethered to the plotter. So now I [run CNCJS on a local Node server on a Raspberry Pi](https://cnc.js.org/docs/rpi-setup-guide/) (Model 4, 2GBRAM) connected by USB cable to the plotter. It auto-runs as soon as the Pi boots, and I can acess it through a web browser to start a job or check in later. I can always switch to CNCJS running on the laptop by unplugging the Pi.
 
 ### Photos and video
 
