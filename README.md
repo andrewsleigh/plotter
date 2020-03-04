@@ -54,6 +54,12 @@ Some other features worth noting:
 * [3D files on Github](https://github.com/andrewsleigh/plotter/tree/master/3d-parts/v2)
 * [Photos on Github](https://github.com/andrewsleigh/plotter/tree/master/photos/v2)
 
+### Photos and video
+
+There's a short demo on YouTube: <https://youtu.be/Z99n9q5OYKk>  
+And lots of photos on Github: <https://github.com/andrewsleigh/plotter/tree/master/photos/v2>
+
+
 
 ## Version 3: Cartesian Plotter with V-slot axis
 
@@ -86,7 +92,7 @@ But otherwise the principle is the same, I just did a little more work to integr
 
 ### 3D design
 
-<!-- * [3D files on Thingiverse](https://www.thingiverse.com/thing:4037180) -->
+* [3D files on Thingiverse](https://www.thingiverse.com/thing:4200863)
 * [3D files on Github](https://github.com/andrewsleigh/plotter/tree/master/3d-parts/v3)
 * [3D assembly on Fusion online](https://a360.co/2Ily4Dw)
 * [Photos on Github]<!-- (https://github.com/andrewsleigh/plotter/tree/master/photos/v2) --> Coming soon
@@ -132,12 +138,6 @@ The Arduino is loaded with Grbl firmware, pretty much stock, but I'm using one o
 ### CAM
 
 There are nmerous GRBL interfaces availabl, and I've always had good results with [CNCJS](https://cnc.js.org), which is bundled up as a webview inside a Mac app. However, that can hog the machine CPU, and also means your laptop is tethered to the plotter. So now I [run CNCJS on a local Node server on a Raspberry Pi](https://cnc.js.org/docs/rpi-setup-guide/) (Model 4, 2GBRAM) connected by USB cable to the plotter. It auto-runs as soon as the Pi boots, and I can acess it through a web browser to start a job or check in later. I can always switch to CNCJS running on the laptop by unplugging the Pi.
-
-### Photos and video
-
-There's a short demo on YouTube: <https://youtu.be/Z99n9q5OYKk>  
-And lots of photos on Github: <https://github.com/andrewsleigh/plotter/tree/master/photos/v2>
-
 
 
 
