@@ -1,6 +1,6 @@
 <p>
 <div class="video-responsive">
-<iframe width="800" height="450" src="https://www.youtube.com/embed/Z99n9q5OYKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/pfx2bN_xx8s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </p>
 
@@ -37,6 +37,7 @@ However, I've shared my 3D files here for others to use if interested. Most of t
 
 This version builds on what I learned with version 1. Most obviously, it uses a traditional 'cartesian' design, where movement in the y-axis is provided by a motorized arm, while the drawing surface stays still. This has the benefit of much greater accuracy. It also means that you can, in theory, draw on any flat surface. 
 
+
 However the drawbacks are that:
 
 1. It needs much more space. With about 50 cm of travel in each axis, it needs a space that big to store, and 1 m x 50 cm to operate.
@@ -56,6 +57,13 @@ Some other features worth noting:
 
 ### Photos and video
 
+
+<p>
+<div class="video-responsive">
+<iframe width="800" height="450" src="https://www.youtube.com/embed/Z99n9q5OYKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</p>
+
 There's a short demo on YouTube: <https://youtu.be/Z99n9q5OYKk>  
 And lots of photos on Github: <https://github.com/andrewsleigh/plotter/tree/master/photos/v2>
 
@@ -63,9 +71,12 @@ And lots of photos on Github: <https://github.com/andrewsleigh/plotter/tree/mast
 
 ## Version 3: Cartesian Plotter with V-slot axis
 
-Note: I'm currently working on photos for this version - for now, here are some renders.
+![Plotter v3 2060](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/IMG_6608.jpg)
 
-![Plotter v3 2060](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2060-sm.png)
+![Plotter v3 2060](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/IMG_6656.jpg)
+
+![Plotter v3 2060](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/IMG_6664.jpg)
+
 
 Previous designs used 10mm steel rods for the x-axis. These are prone to flexing in the assembly, and the linear bearings are also noisy. So I wanted to switch to a design that used a wheeled gantry sliding on v-slot aluminium extrusion. 
 
@@ -77,7 +88,7 @@ I already had 2 lengths of 2020 v-slot from my first build, so I initially used 
 
 I ordered a standard v-slot gantry from China, which cost about £10-12, including wheels, bolts and spacers – including eccentric spacers. This allowed me to get a very good fit of the gantry on the x-axis for smooth quiet motion. 
 
-If you don't want to buy an aluminum ganry, could can easily cut one on a laser (as I did for my prototype) or 3D print one from the OpenBuilds design. 
+If you don't want to buy an aluminum gantry, could can easily cut one on a laser (as I did for my prototype) or 3D print one from the OpenBuilds design. 
 
 ![Plotter v3 2020](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2020-sm.png)
 
@@ -95,31 +106,37 @@ But otherwise the principle is the same, I just did a little more work to integr
 * [3D files on Thingiverse](https://www.thingiverse.com/thing:4200863)
 * [3D files on Github](https://github.com/andrewsleigh/plotter/tree/master/3d-parts/v3)
 * [3D assembly on Fusion online](https://a360.co/2Ily4Dw)
-* [Photos on Github]<!-- (https://github.com/andrewsleigh/plotter/tree/master/photos/v2) --> Coming soon
+* [Photos on Github](https://github.com/andrewsleigh/plotter/tree/master/photos/v3)
 
 
 
 ### Improvements over earlier versions
 
 * More stable x-axis (and so less drooping of the pen at it's furthest y-extension)
+* Much quieter motion on the x-axis, after swapping out linear bearings fora wheeled gantry
 * X-axis can be screwed down to a solid base for greater stability
 * Improved brackets for timing belt and linear rods on y-axis so belt can be more easily removed or tightened
 * Simplified and more compact pen lifter
 * Housing for Arduino and CNC shield can be removed or re-modelled easily (e.g. to fit a smaller Nano-based CNC shield)
+* Base has a rebate to fit a 60 cm cutting mat, to allow easier alignment of paper for plotting
 
 ### Other parts you'll need
 
 * 2 NEMA 17 motors
 * 2 GT2 timing belts
+* 2 8 mm linear rods
+* 4 8 mm (8UU) linear bearings 
 * 30 or 40 tooth pulley for x-axis timing belt
 * 20 tooth pulley for x-axis timing belt
 * Large idley pulley for x-axis timing belt
-* 2 small idler pulleys for y-axis
+* 2 small idler pulleys for y-axis (not the larger Openbuilds pulleys)
 * 5 mm rods for pen lifter
 * Plenty of M5 and M3 hardware!
-* Large v-slot gantry kit
-* Servo motor
+* Large v-slot gantry kit (I got mine direct from China)
+* Tower SG90 Servo motor
+* Some GT2 belt clips, such as cable ties, or these nice removable clips: <www.thingiverse.com/thing:2354961>
 
+(In the UK, I'd recommend Ooznest for all the materials you need to buy.)
 
 
 ## Electronics
@@ -149,7 +166,7 @@ The plotter expects G-Code commands. Typically these are used by CNC machines su
 
 I use the [J Tech Inkscape Laser Plug-In](https://jtechphotonics.com/?page_id=2012) to generate a G-Code file from the SVG in Inkscape. Currently I can only get this to work in Inkscape 0.9, which is 32 bit, and therefore not compatible with macOS Catalina.
 
-Then I use [CNCJS](https://cnc.js.org) to send commands to the plotter. They even have a half-decent [desktop app](https://github.com/cncjs/cncjs/wiki/Desktop-App). 
+Then I use [CNCJS](https://cnc.js.org) to send commands to the plotter. (As noted abve, now running on a Pi.) 
 
 
 
