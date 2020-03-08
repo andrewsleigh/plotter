@@ -134,7 +134,7 @@ But otherwise the principle is the same, I just did a little more work to integr
 * Plenty of M5 and M3 hardware!
 * Large v-slot gantry kit (I got mine direct from China)
 * Tower SG90 Servo motor
-* Some GT2 belt clips, such as cable ties, or these nice removable clips: <www.thingiverse.com/thing:2354961>
+* Some GT2 belt clips, such as cable ties, or these nice removable clips: <http://www.thingiverse.com/thing:2354961>
 
 (In the UK, I'd recommend Ooznest for all the materials you need to buy.)
 
@@ -178,6 +178,6 @@ I'm using [62oz Nema 17 stepper motors](https://ooznest.co.uk/product/nema17-ste
 
 ### Improvements
 
-I've got some ideas about improving on this design, mostly to increase rigidity. ~~First on the list is to experiment with a v-slot and gantry assembly for the x-axis.~~ (Fixed n version 3) And although I'm quite happy with the product design on this version, I'd still like to make it more well-integrated; perhaps find a way to get the motors out of sight.
+I've got some ideas about improving on this design, mostly to increase rigidity. ~~First on the list is to experiment with a v-slot and gantry assembly for the x-axis.~~ (Fixed in version 3) And although I'm quite happy with the product design on this version, I'd still like to make it more well-integrated; perhaps find a way to get the motors out of sight.
 
 
