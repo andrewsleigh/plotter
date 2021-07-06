@@ -136,7 +136,7 @@ It’s difficult to give a comprehensive BOM because there is so much flexibilit
 I’m this configuration the motor control shield is mounted on the Arduino, and the stepper drivers mounted on the shield. You can also get versions that mount a smaller Arduino Nano on to the shield, alongside the drivers, which would make for a more compact design that does the same thing. You would need to adapt the Arduino housing to fit this config.
 
 
-## X Axis
+### X Axis
 
 * Length of 2060 V-Slot aluminium extrusion.
  
@@ -210,39 +210,45 @@ I'm using an Arduino Uno with a CNC shield and two stepper drivers. I prototyped
 
 You can use pretty much any Trinamic driver board. There is a good comparison here: <https://learn.watterott.com/silentstepstick/comparison/>
 
+## Power
 
-### Software
+The plotter requires 12V power, and your supply should be good enough to supply the current your steppers demand. (Mine is a 1.5A 12V supply)
+
+You can plug this straight into the 12V barrel jack on the Arduino, which will give 5V reulated power to the Arduino, and 12V onto the CNC shield. *BUT YOU MUST HACK YOUR CNC SHIELD FIRST*
+
+You need to wire the VIN pin on the CNC shield to the positive power terminal. Like this: http://3dpburner.blogspot.com/p/bluetooth-connection.html?m=1
+
+
+### Software and Workflow
+
+The plotter expects G-Code commands. Typically these are used by CNC machines such as mills, 3D printers and laser cutters. Most of the instructions are shared between machine types except at the business end. The plotter expects pen up and pen down commands to move the pen. (In HPGL, the language used by HP plotters, these are `PU` and `PD`.) Here, we can piggy back on G-Code commands intended to control the power of a laser. So where a laser cutter might start a line by switching the laser on to a certain power, we can use the same command but send it to the servo to move the wiper and drop the pen. This is what the modified Grbl firmware does. 
+
+The chain of tools/processes is basically:
+
+Create artwork > export as vectors (SVG, PDF, etc) > Create GCODE from vector file > Stream GCODE to Arduino > Use Grbl firmware on Arduino to control motors
+
+### Art
+
+Most of my plots are procedurally generated in Processing or p5. I write sketches that are optimised to create continuous lines and curves: no pixel data or, colours or line styles. So far, I haven't figured out a way to use the 3D renderer in p5, and still be able to export the artwork as an SVG. Either way, I start with vector line art.
+
+I also use Blender, which has loads of options for exporting 2D vector data from 3D models.
+
+### Create GCODE
+
+After too much time wasted with Inkscape plug-ins I have switched to [Lightburn](https://lightburnsoftware.com) to create GCode. I find it works well with PDF files.
+
+
+### Stream GCODE
+
+There are numerous GRBL interfaces available, and I've always had good results with [CNCJS](https://cnc.js.org), which is bundled up as a webview inside a Mac app. However, that can hog the machine CPU, and also means your laptop is tethered to the plotter. So now I [run CNCJS on a local Node server on a Raspberry Pi](https://cnc.js.org/docs/rpi-setup-guide/) (Model 4, 2GBRAM) connected by USB cable to the plotter. It auto-runs as soon as the Pi boots, and I can access it through a web browser to start a job or check in later. I can always switch to CNCJS running on the laptop by unplugging the Pi.
+
+The plotter expects a stream of GCode commands to control the motors. There are many ways you can chain together software to get to this stage. Working backwards from the plotter:
+
+### Motor control
 
 The Arduino is loaded with Grbl firmware, pretty much stock, but I'm using one of the many variants that lets you control a servo for pen up and pen down.
 
 <https://github.com/robottini/grbl-servo>
 
-### CAM
-
-There are nmerous GRBL interfaces availabl, and I've always had good results with [CNCJS](https://cnc.js.org), which is bundled up as a webview inside a Mac app. However, that can hog the machine CPU, and also means your laptop is tethered to the plotter. So now I [run CNCJS on a local Node server on a Raspberry Pi](https://cnc.js.org/docs/rpi-setup-guide/) (Model 4, 2GBRAM) connected by USB cable to the plotter. It auto-runs as soon as the Pi boots, and I can acess it through a web browser to start a job or check in later. I can always switch to CNCJS running on the laptop by unplugging the Pi.
-
-
-
-### Workflow
-
-Most of my plots are procedurally generated in Processing or p5. I write sketches that are optimised to create continuous lines and curves: no pixel data or, colours or line styles. So far, I haven't figured out a way to use the 3D renderer in p5, and still be able to export the artwork as an SVG. Either way, I start with vector line art. 
-
-The plotter expects G-Code commands. Typically these are used by CNC machines such as mills, 3D printers and laser cutters. Most of the instructions are shared between machine types except at the business end. The plotter expects pen up and pen down commands to move the pen. (In HPGL, the language used by HP plotters, these are `PU` and `PD`.) Here, we can piggy back on G-Code commands intended to control the power of a laser. So where a laser cutter might start a line by switching the laser on to a certain power, we can use the same command but send it to the servo to move the wiper and drop the pen. This is what the modified Grbl firmware does. 
-
-~~I use the [J Tech Inkscape Laser Plug-In](https://jtechphotonics.com/?page_id=2012) to generate a G-Code file from the SVG in Inkscape. Currently I can only get this to work in Inkscape 0.9, which is 32 bit, and therefore not compatible with macOS Catalina.~~ Update 2021-07-06: I now use Lightburn software to generate the G-code.
-
-Then I use [CNCJS](https://cnc.js.org) to send commands to the plotter. (As noted abve, now running on a Pi.) 
-
-
-
-
-### Mechanical parts and materials
-
-I'm using [62oz Nema 17 stepper motors](https://ooznest.co.uk/product/nema17-stepper-motors/) from Ooznest (UK) and a standard SG90 micro servo to lift/drop the pen. The rods are 8 mm and 10 mm steel linear rods, also from Ooznest, the pen lifter rods are cut from kite poles, and the cable supports are cut by hand from polypropylene sheet. 3D parts are all printed in PLA.
-
-
-### Improvements
-
-I've got some ideas about improving on this design, mostly to increase rigidity. ~~First on the list is to experiment with a v-slot and gantry assembly for the x-axis.~~ (Fixed in version 3) And although I'm quite happy with the product design on this version, I'd still like to make it more well-integrated; perhaps find a way to get the motors out of sight.
 
 
