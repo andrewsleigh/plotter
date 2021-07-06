@@ -190,16 +190,7 @@ You will need to tap M5 holes in the ends of the extrusion.
 * Low profile M5 bolts to attach brackets to V-Slot
 * Various M3 bolts and nutes (get a selection box)
 * Drop-in Tee Nuts for V-Slot e.g. https://ooznest.co.uk/product/drop-in-tee-nuts/
-
-
-### Other parts you'll need
-
-* 2 x NEMA 17 motors
-* 2 x GT2 timing belts
 * Some GT2 belt clips, such as cable ties, or these nice removable clips: <http://www.thingiverse.com/thing:2354961>
-
-
-* 30 or 40 tooth pulley for x-axis timing belt
 
 (In the UK, I'd recommend Ooznest for all the materials you need to buy.)
 
@@ -214,9 +205,9 @@ You can use pretty much any Trinamic driver board. There is a good comparison he
 
 The plotter requires 12V power, and your supply should be good enough to supply the current your steppers demand. (Mine is a 1.5A 12V supply)
 
-You can plug this straight into the 12V barrel jack on the Arduino, which will give 5V reulated power to the Arduino, and 12V onto the CNC shield. *BUT YOU MUST HACK YOUR CNC SHIELD FIRST*
+You can plug this straight into the 12V barrel jack on the Arduino, which will give 5V reulated power to the Arduino, and 12V onto the CNC shield. 
 
-You need to wire the VIN pin on the CNC shield to the positive power terminal. Like this: http://3dpburner.blogspot.com/p/bluetooth-connection.html?m=1
+**BUT YOU MUST HACK YOUR CNC SHIELD FIRST:** You need to wire the VIN pin on the CNC shield to the positive power terminal. Like this: http://3dpburner.blogspot.com/p/bluetooth-connection.html?m=1
 
 
 ### Software and Workflow
