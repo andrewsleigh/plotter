@@ -5,7 +5,9 @@
 </p>
 
 **Update: 2020-03-04. I'm currently on version 3 of the design – scroll down to see the current design and download files.**
-  
+
+## Background
+
 I've always enjoyed the aesthetics of pen plotters, both in the way they operate, and their output. And unlike most digital machines that interface with the physical world, they actually get better at the transition point. Laser cutters make a smell, they burn or melt edges and leave behind a kerf. 3D printers are slow, and leave behind layer lines or heaps of PLA spaghetti. But pen plotters have a delightful slow, deliberate movement that is both cleanly digital and unavoidably textured.
 
 I have an old HP 7475A plotter, but I wanted to try making my own. Not least because I've just made a 1-axis CNC machine ([a camera slider](../fab-slider)) so wanted to continue learning by adding another axis. In particular, I learned from the previous project that getting a machine to 90% good enough is easy. The real work is in that last 10%. If I want to create really good plots, I need to make a really good plotter.
@@ -47,7 +49,7 @@ Some other features worth noting:
 
 * I'm using small sections of kite poles to hold the two parts of the pen lifter assembly together. I found 0.1 mm of extra clearance on one part was enough to allow smooth running without wobble.
 
-* In an idea I lifted from Evil Mad Scientist's AxiDraw, I'm using thin strips of flexible plastic (polypropylene I think) to support the wires to the servo and y-axis stepper. 
+* In an idea I lifted from Evil Mad Scientist's AxiDraw, I'm using thin strips of flexible polypropylene plastic to support the wires to the servo and y-axis stepper. 
 
 ### 3D design
 
@@ -92,7 +94,7 @@ If you don't want to buy an aluminum gantry, could can easily cut one on a laser
 
 ![Plotter v3 2020](https://github.com/andrewsleigh/plotter/raw/master/photos/v3/Cartesian_Plotter_v5_Render_2020-sm.png)
 
-Note, you'll need to tap M5 holes into the ends of the v-slot to attach the two end brackets. The feet are bolted frmo underneath into the v-slot. 
+Note, you'll need to tap M5 holes into the ends of the v-slot to attach the two end brackets. The feet are bolted from underneath into the v-slot. 
 
 But then I came into the possession(!) of a 70 cm lngth of 2060 v-slot, so I was able to make a longer, even more stable x-axis. I needed to switch the orientation of the x-axis motor, and raise the axis a little more off the ground to enable th timing belt to go over and under the 2060. I also had to fit a larger 30 tooth pulley. 
 
@@ -120,21 +122,84 @@ But otherwise the principle is the same, I just did a little more work to integr
 * Housing for Arduino and CNC shield can be removed or re-modelled easily (e.g. to fit a smaller Nano-based CNC shield)
 * Base has a rebate to fit a 60 cm cutting mat, to allow easier alignment of paper for plotting
 
+## Bill of Materials (BOM)
+
+It’s difficult to give a comprehensive BOM because there is so much flexibility in the design, and so many choices depend on what you have to had. Nevertheless, here is an attempt at a reasonable baseline.
+
+### Motion Control
+
+* Arduino Uno (I’d recommend a genuine Arduino to reduce the risk of EM interference which can play havoc with your servo motor)
+* Motor Control Shield
+* 2 x Stepper Drivers (A4988-style, but I’d recommend Trinamic drivers for quieter operation)
+* 2 x Nema 17 Stepper motors (‘17’ refers to the physical size, you will need to specify the power as well. I used these 7 oz ones from Ooznest, which are fine: https://ooznest.co.uk/product/nema17-stepper-motors/
+
+I’m this configuration the motor control shield is mounted on the Arduino, and the stepper drivers mounted on the shield. You can also get versions that mount a smaller Arduino Nano on to the shield, alongside the drivers, which would make for a more compact design that does the same thing. You would need to adapt the Arduino housing to fit this config.
+
+
+## X Axis
+
+* Length of 2060 V-Slot aluminium extrusion.
+ 
+(I used a 75 cm length, but anything from 40 cm up is good. Make sure you use V slot and not one of the other profiles of extrusion.An earlier version used two lengths of 2020 extrusion with a 20 mm gap in between. It doesn’t matter, just use what you have. A single piece of 2060 is stiffer, which means less drooping of the pen end and so more reliable plotting, but you could easily make other designs stiffer.)
+
+You will need to tap M5 holes in the ends of the extrusion. 
+
+* 2GT Timing belt (buy a length about 2.5 x the length of your extrusion. (e.g. https://ooznest.co.uk/product/2gt-gates-open-timing-belt-per-metre/)
+
+* 30-tooth 2GT pulley (for 6 mm belt, 5 mm bore) e.g. https://ooznest.co.uk/product/2gt-pulleys/
+
+(This pulley has a large enough diameter to run the belt on either side of the extrusion. If you want to run the belt in a gap inside some extrusion (or you’re using the 2020 design) you’ll need a smaller diameter pulley. You could print one.)
+
+* Idler pulley (of roughly the same diameter as your main pulley) e.g. https://ooznest.co.uk/product/2gt-smooth-idler/. You could also print one.
+
+3D printed parts:
+
+* End bracket for idler pulley
+* End bracket for motor
+* Shield for motor end (purely cosmetic)
+* Box and lid for Arduino
+* Feet
+
+
+### Gantry and Y-axis
+
+* Large v-slot gantry kit (I got mine direct from China, or you can laser cut or 3D print your own)
+* 2 x small idler pulleys for y-axis (not the larger Openbuilds pulleys)
+* 4 x 8 mm (8UU) linear bearings 
+* 2 x 8 mm linear rods
+
+3D printed parts:
+
+* Gantry case
+
+### Pen Lifter
+
+* SG90 Servo motor (e.g. https://thepihut.com/products/towerpro-servo-motor-sg90-hv-continuous-rotation)
+* 3 wire jumper extension to extend the wires form the servo back to the motor control board
+* 2 x smooth 5 mm diameter rods (I used rods from an old kite. Any smooth, consistent-diameter rods will do, but you will need to adapt the 3D files to fit)
+
+3D printed parts:
+
+* Y axis pen end bracket
+* Y axis other end bracket
+* Pen lifter
+* 3mm bolt cap
+
+### Other Hardware
+
+* Low profile M5 bolts to attach brackets to V-Slot
+* Various M3 bolts and nutes (get a selection box)
+* Drop-in Tee Nuts for V-Slot e.g. https://ooznest.co.uk/product/drop-in-tee-nuts/
+
+
 ### Other parts you'll need
 
-* 2 NEMA 17 motors
-* 2 GT2 timing belts
-* 2 8 mm linear rods
-* 4 8 mm (8UU) linear bearings 
-* 30 or 40 tooth pulley for x-axis timing belt
-* 20 tooth pulley for x-axis timing belt
-* Large idley pulley for x-axis timing belt
-* 2 small idler pulleys for y-axis (not the larger Openbuilds pulleys)
-* 5 mm rods for pen lifter
-* Plenty of M5 and M3 hardware!
-* Large v-slot gantry kit (I got mine direct from China)
-* Tower SG90 Servo motor
+* 2 x NEMA 17 motors
+* 2 x GT2 timing belts
 * Some GT2 belt clips, such as cable ties, or these nice removable clips: <http://www.thingiverse.com/thing:2354961>
+
+
+* 30 or 40 tooth pulley for x-axis timing belt
 
 (In the UK, I'd recommend Ooznest for all the materials you need to buy.)
 
@@ -164,7 +229,7 @@ Most of my plots are procedurally generated in Processing or p5. I write sketche
 
 The plotter expects G-Code commands. Typically these are used by CNC machines such as mills, 3D printers and laser cutters. Most of the instructions are shared between machine types except at the business end. The plotter expects pen up and pen down commands to move the pen. (In HPGL, the language used by HP plotters, these are `PU` and `PD`.) Here, we can piggy back on G-Code commands intended to control the power of a laser. So where a laser cutter might start a line by switching the laser on to a certain power, we can use the same command but send it to the servo to move the wiper and drop the pen. This is what the modified Grbl firmware does. 
 
-I use the [J Tech Inkscape Laser Plug-In](https://jtechphotonics.com/?page_id=2012) to generate a G-Code file from the SVG in Inkscape. Currently I can only get this to work in Inkscape 0.9, which is 32 bit, and therefore not compatible with macOS Catalina.
+~~I use the [J Tech Inkscape Laser Plug-In](https://jtechphotonics.com/?page_id=2012) to generate a G-Code file from the SVG in Inkscape. Currently I can only get this to work in Inkscape 0.9, which is 32 bit, and therefore not compatible with macOS Catalina.~~ Update 2021-07-06: I now use Lightburn software to generate the G-code.
 
 Then I use [CNCJS](https://cnc.js.org) to send commands to the plotter. (As noted abve, now running on a Pi.) 
 
