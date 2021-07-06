@@ -4,7 +4,9 @@
 </div>
 </p>
 
-**Update: 2020-03-04. I'm currently on version 3 of the design – scroll down to see the current design and download files.**
+**Update: 2020-03-04. I'm currently on version 3 of the design – scroll down to see the current design and download files**
+**Update: 2021-07-06. I've added a BOM, after many requests!**
+
 
 ## Background
 
