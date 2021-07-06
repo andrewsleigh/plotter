@@ -7,6 +7,9 @@
 * **Update: 2020-03-04. I'm currently on version 3 of the design – scroll down to see the current design and download files**
 * **Update: 2021-07-06. I've added a BOM, after many requests!**
 
+## Support my work!
+
+If you like this project or would like to say thanks, you can buy my plotter artwork from https://penuppendown.square.site. I'd really appreciate your support :) 
 
 ## Background
 
