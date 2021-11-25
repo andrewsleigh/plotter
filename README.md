@@ -131,6 +131,7 @@ But otherwise the principle is the same, I just did a little more work to integr
 
 
 <a name="bom"/>
+
 ## Bill of Materials (BOM)
 
 It’s difficult to give a comprehensive BOM because there is so much flexibility in the design, and so many choices depend on what you have to had. Nevertheless, here is an attempt at a reasonable baseline.
@@ -205,6 +206,7 @@ You will need to tap M5 holes in the ends of the extrusion.
 
 
 <a name="us-bom"/>
+
 ## BOM (USA)
 
 Fellow plotter plotter ('plotterer'?) [Kameron Keller](https://www.kameronkeller.com) kindly shared this BOM that he put together based on his build. And he's based in the US, so there are some US Amazon links in there which may be useful to some. Thanks Kameron.
