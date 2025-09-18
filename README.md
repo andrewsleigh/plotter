@@ -114,7 +114,7 @@ But otherwise the principle is the same, I just did a little more work to integr
 
 * [3D files on Thingiverse](https://www.thingiverse.com/thing:4200863)
 * [3D files on Github](https://github.com/andrewsleigh/plotter/tree/master/3d-parts/v3)
-* [3D assembly on Fusion online](https://a360.co/2Ily4Dw)
+* [3D assembly on Fusion online](https://a360.co/48olCzT)
 * [Photos on Github](https://github.com/andrewsleigh/plotter/tree/master/photos/v3)
 
 
